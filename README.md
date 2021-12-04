@@ -8,7 +8,7 @@ Buiding the clone of porter.in using HTML CSS and Javascript. Major pages includ
 <ul>
   <li>Clone the repo and run the app.</li>
   <ul>
-    <li>https://github.com/remonsingh/Porter Clone</li>
+    <li>https://github.com/remonsingh/Porter-Clone</li>
     <li>Execute the porter home.html file in the browser, and enjoy our website</li>
   </ul>
 </ul>
