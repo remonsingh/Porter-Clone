@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Mini Truck Online | Tata Ace for Rent in your City | Porter</title>
+
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../navbar/navbar.css">
+    <link rel="icon" href="https://d35ppnqksufxmo.cloudfront.net/frontend_website/favicon.ico">
+    <style>
+        #footer {
+
+            display: flex;
+            background-color: black;
+        }
+
+        #footer>h1,
+        h2,
+        h3,
+        h4 {
+
+            color: cornsilk;
+
+        }
+
+        #portertag {
+            color: cornsilk;
+        }
+
+        #footer>h3,
+        h4 {
+            font-family: sans-serif;
+            font-weight: lighter;
+            font-size: small;
+        }
+
+        .inside {
+            margin-top: 25px;
+            margin-right: 110px;
+            margin-left: 40px;
+            display: inline;
+            width: 400px;
+
+        }
+
+        .logoA {
+
+            width: 180px;
+            height: 50px;
+            margin: 8px;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+
+
+
+
+
+        #next {
+
+            display: flex;
+            background-color: black;
+        }
+
+        .new {
+
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .old {
+
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        .p {
+
+            margin-left: 700px;
+            color: cornsilk;
+            margin-top: 20px;
+        }
+
+        #height {
+
+            height: 50px;
+            background-color: black;
+        }
+
+        #slide {
+            width: 100%;
+            height: 500px;
+            border: 1px solid red;
+
+        }
+
+        #mobile {
+
+            display: flex;
+            border: 1px solid red;
+        }
+
+        #internal {
+            margin-left: 80px;
+            width: 60%;
+            border: 1px solid red;
+
+        }
+
+        #internal>h1,
+        h3 {
+
+            color: black;
+        }
+
+        #blue {
+            background-color: aqua;
+            transform: rotate(-20deg);
+            width: 100%;
+            height: 300px;
+            border: 1px solid red;
+
+
+        }
+
+        .logoA {
+
+            background-color: blue;
+
+
+        }
+
+        #faqhead {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body class="website-home">
+    <div class="navbarfinal">
+        <div id="navbarr"></div>
+
+        <div id="navbarr1"></div>
+    </div>
+
+
+    <div class="modalp" id="modalp">
+        <div class="modal-header">
+            <div class="title">Track order</div>
+            <button data-close-button class="close-button">&#x2715;</button>
+        </div>
+        <div id="hr"></div>
+        <div class="modal-body">
+            <input type="text" placeholder="CRN or Docket number" class="crn" />
+            <input type="text" placeholder="Mobile number" class="crn" />
+            <button id="track" class="crn tr">TRACK ORDER</button>
+
+        </div>
+        <div id="text">
+            Enter your Booking Number for Spot order (e.g. CRN12345678)
+            and Docket Number for Intercity Parcel order (e.g. 1234567)
+            along with the Mobile number used while booking.
+        </div>
+    </div>
+    <!-- <div id="overlayp"></div> -->
+    <div class="website-home" id="main_div">
+
+
+        <div id="slider_wrapper">
+            <div id="slide">
+
+            </div>
+
+            <div id="search_container">
+                <form onsubmit="validation(event)" action="" id="search_form">
+                    <input id="cityName_input" onclick="showCity()" type="text" placeholder="city">
+
+                    <input oninput=" pickUp_locality()" onclick="show_pickUp_container()" id="pickUp" type="text"
+                        placeholder="Enter PickUp Address">
+                    <input oninput="dropOff_locality()" onclick="show_drop_container()" id="dropOff" type="text"
+                        placeholder="Enter DropOff Address">
+                    <input id="mob" type="text" placeholder="Enter Mobile Number">
+                    <input type="text" placeholder="Name(Optional)">
+                    <input onclick="show_requirement()" id="requirement" type="text" placeholder="Requirement">
+                    <button id="get_estimate_btn">GET ESTIMETE</button>
+                </form>
+
+
+                <div class="non_visible_containers">
+                    <div class="background_white" id="city_container">
+                        <div class="cityName">PUNE</div>
+                        <div class="cityName">MUMBAI</div>
+                        <div class="cityName">BANGALORE</div>
+                        <div class="cityName">DELHI</div>
+                        <div class="cityName">lUCKNOW</div>
+                        <div class="cityName">JAIPUR</div>
+                    </div>
+
+                    <div class="website-home background_white" id="pickUp_container">
+
+                    </div>
+                    <div class="website-home background_white" id="drop_container">
+
+                    </div>
+                    <div class="background_white" id="requirement_container">
+                        <div class="requirement">PERSONAL</div>
+                        <div class="requirement">BUSINESS</div>
+                        <div class="requirement">HOUSE SHIFTNG</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="app_promo">
+            <!-- Pickup and drop anywhere within the city box -->
+
+            <div class="Pickup">
+                <div class="number_div">
+                    1
+                </div>
+                <div class="pickUp_right">
+                    <div class="upper">
+                        <h4 class="h2_margin">Pickup and drop anywhere within the city</h4>
+                        <p class="para_font silver_color">Choose your pickup & drop location from within the city</p>
+                    </div>
+                    <div class="lower">
+                        <h5>Download the Porter app on</h5>
+                        <div class="logoes">
+                            <div>
+                                <img src="https://d35ppnqksufxmo.cloudfront.net/frontend_website/7d201f8ab29758060a506b8f5ca8802e.svg"
+                                    alt="">
+                            </div>
+                            <div>
+                                <img src="https://d35ppnqksufxmo.cloudfront.net/frontend_website/064db81ca0ea310731f96e53580dcc99.svg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="pickUp_hr">
+
+            <!-- Choose vehicle of your choice box -->
+
+            <div class="firstGrid">
+                <div class="number_div"> 2</div>
+                <div>
+                    <h4 class="h2_margin">Choose vehicle of your choice</h4>
+                    <p class="para_font silver_color">Get quotes for vehicles which can carry from 20 kgs to 2000 kgs
+                        and book instantly without any
+                        waiting</p>
+                </div>
+            </div>
+            <hr class="pickUp_hr">
+
+            <!-- Real time tracking box -->
+
+            <div class="firstGrid">
+                <div class="number_div"> 3</div>
+                <div>
+                    <h4 class="h2_margin">Choose vehicle of your choice</h4>
+                    <p class="para_font silver_color">Our verified partner will ensure that your goods are transported
+                        safely to the destination. You can
+                        monitor the trip with live vehicle tracking and regular
+                        sms/email updates from our <span class="dark_grey">MOBILE APP</span> or</p>
+                    <a class="track_link" href="">TRACK ORDER HERE</a>
+                </div>
+            </div>
+
+            <div id="vid">
+
+
+                <video id="video" controls="controls" autoplay="autoplay" loop muted height="700px"
+                    src="https://www.practostatic.com/web-assets/home/assets/videos/appointment.700ce682eaec91bf93b6574cb8f09cd0.webm">
+
+                </video>
+            </div>
+        </div>
+
+
+
+        <div id="offer_review">
+            <div class="offer_heading">
+                <h2>WHAT WE OFFER</h2>
+            </div>
+            <div class="big_hr">
+
+            </div>
+
+            <div class="blue_rotate">
+
+            </div>
+            <div class="facilities">
+                <div class="items">
+                    <div class="img_div " id="rental">
+
+                    </div>
+                    <div class="text_div">
+                        <h4 class="top_margin bottom_margin">Hassle-Free truck rental</h4>
+                        <p>Book mini truck online. Whenever you need, wherever you need</p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img_div" id="pricing">
+
+                    </div>
+                    <div class="text_div">
+                        <h4 class="top_margin bottom_margin">Transparent Pricing</h4>
+                        <p>Enjoy the most affordable rates in town with our transparent pricing</p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img_div" id="tracing">
+
+                    </div>
+                    <div class="text_div">
+                        <h4 class="top_margin bottom_margin">Realtime Tracking</h4>
+                        <p>Track your goods movement across the city with our app</p>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img_div" id="trucks">
+
+                    </div>
+                    <div class="text_div">
+                        <h4 class="top_margin bottom_margin">Safe and Reliable Trucks</h4>
+                        <p>Superior safety ensured with our team of verified & trained partners</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right_text">
+                <h2>WHAT PEOPLE SAY</h2>
+
+            </div>
+            <div class="yellow_rotate">
+
+            </div>
+
+            <div class="big_hr right_hr">
+
+            </div>
+
+            <div class="member_container">
+                <div class="member">
+                    <div class="description">
+                        “Way better than naaka waalas. Have shifted all my logistics needs to Porter and I can now
+                        safely
+                        focus on my business growth. Amazing service!”
+                    </div>
+                    <div class="member_img" id="vinay">
+
+                    </div>
+                    <div class="info">
+                        <h3>VINAY</h3>
+                        <h4 class="top_margin">Bangalore</h4>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="description">
+                        “Excellent service by multiple drivers. I own a business and do multiple shiftings. Rather than
+                        ask
+                        local drivers and bargain every time, I use porter which fulfils all my need. Thanks a lot!”
+                    </div>
+                    <div class="member_img" id="dinesh">
+
+                    </div>
+                    <div class="info">
+                        <h3>DINESH</h3>
+                        <h4 class="top_margin">Mumbai</h4>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="description">
+                        “Have had an amazing experience. Had three successful deliveries where it’s a struggle to
+                        arrange a
+                        tempo service for your desired pickup and drop off. Must try this app!”
+                    </div>
+                    <div class="member_img" id="ashok">
+
+                    </div>
+                    <div class="info">
+                        <h3>ASHOK</h3>
+                        <h4 class="top_margin">Delhi NCR</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="vehicles_container">
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="one">
+
+                        </div>
+                        <div class="vehicle_name">
+                            TATA ACE
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="two">
+
+                        </div>
+                        <div class="vehicle_name">
+                            TATA407
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="three">
+
+                        </div>
+                        <div class="vehicle_name">
+                            3 WHEELER
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="four">
+
+                        </div>
+                        <div class="vehicle_name">
+                            ACE (HELPER)
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="five">
+
+                        </div>
+                        <div class="vehicle_name">
+                            3 WHEELER (HELPER)
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="six">
+
+                        </div>
+                        <div class="vehicle_name">
+                            8FT 1TON
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="seven">
+
+                        </div>
+                        <div class="vehicle_name">
+                            8FT PICKUP
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle_box">
+                    <div class="img_wrapper">
+                        <div class="vehicle_img" id="eight">
+
+                        </div>
+                        <div class="vehicle_name">
+                            2 WHEELER
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="left_btn_container" class="btn_container">
+
+                <button id="left_btn" onclick="khisakLeft()">
+                    < </button>
+
+            </div>
+            <div id="right_btn_container" class="btn_container">
+
+                <button id="right_btn" onclick="khisakRight()">
+                    > </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- </div>
+    </div> -->
+
+        <div id="show_vehicle_container">
+            <div class="show_wrapper">
+                <div class="show_items img_show" id="vehicle_img_box">
+
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_ace-e92a36b3508e6e3b1804fd2015adbfb6c948bc35afab36699440785ed83b5b24.png"
+                        alt="">
+
+                </div>
+                <div class="show_items ">
+
+                    <div class="vehicle_rent_info">
+
+                        <div class="rent_items left_rent_item">
+                            <h2 id="rent_vehicle">RENT TATA ACE</h2>
+                            <div class="fares_box">
+                                Fares starting from <span id="rent_price">₹210</span>
+                            </div>
+                            <div id="para_div">
+                                <div>
+                                    Base fare includes <span id="distance"> 1.0 km</span> distance and <span
+                                        id="time">70
+                                    </span> minutes of time
+                                </div>
+                                <div>
+                                    Pricing may vary based on your locality.
+                                </div>
+                                <div>
+                                    Road tax, parking etc as applicable over and above ride fare.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rent_items right_rent_item">
+
+                            <div class="capacity_items">
+                                Capacity: <span class="bold_font" id="capacity">750kg</span>
+                            </div>
+                            <div class="capacity_items">
+                                Size(LxBxH): <span class="bold_font" id="size">7ft x 4ft x 5ft</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- we are transforming cities and below part -->
+
+        <div>
+            <div class="text-center">
+                <h1 style="color : black;">We are transforming cities</h1>
+                <div class="under"></div>
+                <div class="para_div">
+                    <p class="para">We are present right where you need us and take care of all your logistics
+                        requirements.
+                        Our
+                        cost-effective solutions make us the right partner for your business, enterprise or for your
+                        household
+                        goods movement anywhere in India.</p>
+                </div>
+
+            </div>
+
+            <div class="cities">
+
+
+                <img src="https://i.ibb.co/wSzx3Zv/city-buidings-image-porter.png" />
+
+            </div>
+        </div>
+
+        <div class="enterprises"><br>
+            <div class="enterprises1">
+
+                <img src="https://d35ppnqksufxmo.cloudfront.net/frontend_website/1dbb95705480e0fe70b4b21fa480b613.svg"
+                    class="img1" />
+                <div class="enterprises2">
+                    <h2>For Enterprises</h2>
+                    <p>Porter offers the most efficient and time bound logistic services for businesses. With our huge
+                        fleet
+                        of vehicles we take care of your peak business requirements and bulk booking challenges. Clients
+                        also benefit from significant cost savings and improved SLA.</p> <br>
+                    <input type="submit" value="KNOW MORE >" id="know-more">
+                </div>
+
+            </div><br><br>
+        </div>
+
+
+        <div>
+            <div>
+                <h2 class="featured">As featured on</h2>
+            </div>
+            <div class="featured1">
+                <div class="featured2">
+                    <p>“Porter, seems to have established a reputation for itself among small businesses. Its on-demand
+                        services are reportedly bringing in a healthy share of revenues. It’s also worth noting the pace
+                        at
+                        which Porter has chosen to grow, crossing 1.5 million bookings and is growing at a…”</p>
+                    <img src="	https://d35ppnqksufxmo.cloudfront.net/frontend_website/4865b8829ac782f43cac066f06d9fe67.png"
+                        id="img2" />
+                </div>
+                <div class="featured2">
+                    <p>“With its innovative use of technology, Porter has delivered what was unimaginable two years
+                        back.
+                        They have brought convenience, reliability and efficiency to the Indian logistics industry…have
+                        taken out the vulnerability and unpredictability from the driver’s demand curve…”</p>
+                    <img src="https://d35ppnqksufxmo.cloudfront.net/frontend_website/09c7f74d40ade5ec64924b7dc79378fb.png"
+                        id="img3" />
+
+                </div>
+                <div class="featured2">
+                    <p>“Porter, seems to have established a reputation for itself among small businesses. Its on-demand
+                        services are reportedly bringing in a healthy share of revenues. It’s also worth noting the pace
+                        at
+                        which Porter has chosen to grow, crossing 1.5 million bookings and is growing at a…”</p>
+                    <img src="	https://d35ppnqksufxmo.cloudfront.net/frontend_website/1fd817a5e90ccbcd10168be996492bca.png"
+                        id="img2" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="frequen">
+            <div class="featured">
+                <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                <div class="under top_margin"></div>
+            </div>
+
+            <div class="frequen1">
+                <h3>> What is porter app?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> How do I use Porter App?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> How do I book a tempo/mini truck or bike online from porter?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> Does porter provide intrrcity or interstate service?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> Does porter provide labor (loading/unloading) service?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> Does Porter provide Packers and Movers service?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> How long does it take todeliver?</h3>
+
+
+            </div>
+            <div class="frequen1">
+                <h3>> DoesPorter deliver laptop?</h3>
+
+
+            </div>
+
+            <div class="frequen1">
+                <h3>> What are charge for a porter truck and porter bike delivery service?</h3>
+
+
+            </div>
+
+
+        </div><br>
+
+        <div class="intercity-box">
+            <div class="intercity-box1">
+                <img
+                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNjBweCIgaGVpZ2h0PSI1NHB4IiB2aWV3Qm94PSIwIDAgNjAgNTQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ3LjEgKDQ1NDIyKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cEAxeDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIiBpZD0ibGluZWFyR3JhZGllbnQtMSI+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMyOTYyRkYiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzVFMEJFMCIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJIb21lIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iaG9tZV9sYW5kaW5nLWNvcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNDcuMDAwMDAwLCAtNTc2NC4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNDcuMDAwMDAwLCA1NzY0LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTU5LjAyMzI1NTgsNy4wNjM0ODA2NCBMNTkuMDIzMjU1OCwyMy42MDczMjEzIEM1OS4wMjMyNTU4LDI3LjUyNDQwMDMgNTUuODk2MTYxNCwzMC43MDI5NzQ3IDUxLjk5NjIzNjQsMzAuNzAyOTc0NyBMMzMuMDE4MjI3MiwzMC43MDI5NzQ3IEMzMi42NDcxNzc0LDMwLjcwMjk3NDcgMzIuMzQxNjU0OCwzMC43MDA4NTE3IDMyLjA4NjA1LDMwLjY5NTQ2MjMgQzMxLjgxODI1MDIsMzAuNjg5OTA5NiAzMS41MTY3OTI2LDMwLjY4Nzc4NjYgMzEuMzk5MjMzOSwzMC43MDA4NTE3IEMzMS4yNzY3OTcyLDMwLjc4MjUwODUgMzAuOTc2NjQwNCwzMS4wNTg2NzIgMzAuNjg3Mzc3NywzMS4zMjYzNDMxIEMzMC41NzI3NDU3LDMxLjQzMjMzMzcgMzAuNDQyOTkyMSwzMS41NDg5Mzk3IDMwLjMwMjk5NDgsMzEuNjc3MzA0MiBMMjQuOTMzNjY3MSwzNi41OTI3MTk4IEMyNC41MDUzODI3LDM2Ljk4NTE2MjYgMjMuODcxNzM2MywzNy4wODY3NDM4IDIzLjM0MTM0LDM2Ljg1MTg5ODcgQzIyLjgxMDk0MzcsMzYuNjE2ODkwMyAyMi40Mzg1OTMxLDM2LjA4OTM4NyAyMi40Mzg1OTMxLDM1LjUwNzE3MzcgTDIyLjQzODU5MzEsMTkuOTI0MjcwOCBMNy4xMDg4MDY0NiwxOS45MjQyNzA4IEM0LjgyMjM0NjM0LDE5LjkyNDI3MDggMi45MjY3NzMwMiwyMS44MDYxMzQ1IDIuOTI2NzczMDIsMjQuMTAyMzI1MSBMMi45MjY3NzMwMiw0MC42NDYxNjU4IEMyLjkyNjc3MzAyLDQyLjk0MjUxOTYgNC44MjI1MDg5NCw0NC43NDc5NTI1IDcuMTA4ODA2NDYsNDQuNzQ3OTUyNSBMMjguMzA3NDIzNCw0NC43NDc5NTI1IEMyOC42NzI0NTcsNDQuNzQ3OTUyNSAyOS4wMTM5MTM5LDQ0LjkxNjMyOSAyOS4yODM1MDIyLDQ1LjE2MzU4NTkgTDMzLjY1Nzg4OTcsNDkuMjE0NDE4OCBMMzMuNjU3ODg5NywzNS4yNDQ3Mjg2IEMzMy42NTc4ODk3LDM0LjQzMjg5NjIgMzQuMzEyOTk5LDMzLjc3NDkwNTMgMzUuMTIxMjc2MiwzMy43NzQ5MDUzIEMzNS45Mjk1NTMzLDMzLjc3NDkwNTMgMzYuNTg0NjYyNywzNC40MzI4OTYyIDM2LjU4NDY2MjcsMzUuMjQ0NzI4NiBMMzYuNTg0NjYyNyw1Mi41NDU4NTQ5IEMzNi41ODQ2NjI3LDUzLjEyODA2ODIgMzYuMjUyOTYxOCw1My42NDc3MzI0IDM1LjcyMjQwMjgsNTMuODgyNzQwOCBDMzUuNTMyNjUwNCw1My45NjY4NDczIDM1LjM0MjA4NSw1NCAzNS4xNDI1NzY2LDU0IEMzNC43ODQyMDk1LDU0IDM0LjQzMDcyMDQsNTMuODUyMjAxMSAzNC4xNTU3NjYzLDUzLjYwMDA0NDggTDI3Ljc0MDExNzIsNDcuNjg3NDM1NyBMNy4xMDg4MDY0Niw0Ny42ODc0MzU3IEMzLjIwODcxODgyLDQ3LjY4NzQzNTcgMCw0NC41NjMyNDQ3IDAsNDAuNjQ2MDAyNCBMMCwyNC4xMDIzMjUxIEMwLDIwLjE4NTI0NjEgMy4yMDg3MTg4MiwxNi45ODQ2MjQzIDcuMTA4ODA2NDYsMTYuOTg0NjI0MyBMMjIuNDM4NTkzMSwxNi45ODQ2MjQzIEwyMi40Mzg1OTMxLDcuMDYzNDgwNjQgQzIyLjQzODU5MzEsMy4xNDYyMzgzNCAyNS42NzE4NjQzLDAgMjkuNTcxOTUyLDAgTDUxLjk5NjM5OSwwIEM1NS44OTYxNjE0LDAgNTkuMDIzMjU1OCwzLjE0NjIzODM0IDU5LjAyMzI1NTgsNy4wNjM0ODA2NCBaIiBpZD0iU2hhcGUiIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQtMSkiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTExLjI1MjA5MywzMC4xMzk1MzQ5IEMxMC41ODYyMTAyLDMwLjEzOTUzNDkgMTAuMDQ2NTExNiwzMC43MDE3MjA5IDEwLjA0NjUxMTYsMzEuMzk1MzQ4OCBDMTAuMDQ2NTExNiwzMi4wODg5NzY3IDEwLjU4NjIxMDIsMzIuNjUxMTYyOCAxMS4yNTIwOTMsMzIuNjUxMTYyOCBMMTEuMzUyNTU4MSwzMi42NTExNjI4IEMxMi4wMTg0NDA5LDMyLjY1MTE2MjggMTIuNTU4MTM5NSwzMi4wODg5NzY3IDEyLjU1ODEzOTUsMzEuMzk1MzQ4OCBDMTIuNTU4MTM5NSwzMC43MDE3MjA5IDEyLjAxODQ0MDksMzAuMTM5NTM0OSAxMS4zNTI1NTgxLDMwLjEzOTUzNDkgTDExLjI1MjA5MywzMC4xMzk1MzQ5IFoiIGlkPSJQYXRoIiBmaWxsPSJ1cmwoI2xpbmVhckdyYWRpZW50LTEpIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTUuMDE5NTk5MiwzMC4xMzk1MzQ5IEMxNC4zNTM2ODA5LDMwLjEzOTUzNDkgMTMuODEzOTUzNSwzMC43MDE3MjA5IDEzLjgxMzk1MzUsMzEuMzk1MzQ4OCBDMTMuODEzOTUzNSwzMi4wODg5NzY3IDE0LjM1MzY4MDksMzIuNjUxMTYyOCAxNS4wMTk1OTkyLDMyLjY1MTE2MjggTDE1LjExOTkzNTcsMzIuNjUxMTYyOCBDMTUuNzg1ODU0LDMyLjY1MTE2MjggMTYuMzI1NTgxNCwzMi4wODg5NzY3IDE2LjMyNTU4MTQsMzEuMzk1MzQ4OCBDMTYuMzI1NTgxNCwzMC43MDE3MjA5IDE1Ljc4NTg1NCwzMC4xMzk1MzQ5IDE1LjExOTkzNTcsMzAuMTM5NTM0OSBMMTUuMDE5NTk5MiwzMC4xMzk1MzQ5IFoiIGlkPSJQYXRoIiBmaWxsPSJ1cmwoI2xpbmVhckdyYWRpZW50LTEpIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDAuMTcyMDA3NiwyMC4wOTMwMjMzIEMzOS40NzA2MjU1LDIwLjA5MzAyMzMgMzguOTMwMjMyNiwyMC42NTQxMTgzIDM4LjkzMDIzMjYsMjEuMzQ2NDAwMSBMMzguOTMwMjMyNiwyMS4zNTYwMDkzIEMzOC45MzAyMzI2LDIyLjA0ODI5MTEgMzkuNDcwNzY2NiwyMi42MDQ2NTEyIDQwLjE3MjAwNzYsMjIuNjA0NjUxMiBDNDAuODczMjQ4NiwyMi42MDQ2NTEyIDQxLjQ0MTg2MDUsMjIuMDM4NjgxOSA0MS40NDE4NjA1LDIxLjM0NjQwMDEgQzQxLjQ0MTg2MDUsMjAuNjU0MTE4MyA0MC44NzMzODk3LDIwLjA5MzAyMzMgNDAuMTcyMDA3NiwyMC4wOTMwMjMzIFoiIGlkPSJQYXRoIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDUuMjA5MzAyMywxMi45NDg3OTgxIEM0NS4yMDkzMDIzLDE0LjY1MDYzNCA0My45MDEzNzM4LDE1LjY4NTYzMjYgNDIuOTQ2MzIxMywxNi40NDUxNjggQzQyLjU4NDYyMzQsMTYuNzMyODU2NyA0MS45MTEzODE2LDE3LjI1Nzc4NDIgNDEuOTEzMTc4NywxNy40NTM4NTgyIEM0MS45MTk3MTM0LDE4LjIyMjk4ODQgNDEuMjY2ODkyOCwxOC44MzcyMDkzIDQwLjQ1NDc4NzgsMTguODM3MjA5MyBDNDAuNDUwNzAzNSwxOC44MzcyMDkzIDQwLjQ0NjYxOTMsMTguODM3MjA5MyA0MC40NDI1MzUxLDE4LjgzNzIwOTMgQzM5LjYzNjE0OCwxOC44MzcyMDkzIDM4Ljk3OTA3OTgsMTguMjQxODY4NSAzOC45NzI1NDUsMTcuNDc2NjA3MiBDMzguOTU5NjM4OSwxNS45NjgyMTQ0IDQwLjEyMTY3OTMsMTUuMDY0OTEyIDQxLjA1NTQ5MzksMTQuMzIyMjQ0OSBDNDEuNzg4MjAxOCwxMy43Mzk0MzkyIDQyLjI2ODY2ODYsMTMuMzI5MzM5NiA0Mi4yNjg2Njg2LDEyLjk1NDA1OTcgQzQyLjI2ODY2ODYsMTIuMTk0MzY5NiA0MS42MTYxNzQ3LDExLjU3NjI3OTkgNDAuODE0MTk4NSwxMS41NzYyNzk5IEM0MC4wMTE4OTU2LDExLjU3NjI3OTkgMzkuMzU5MjM4MywxMi4xOTQzNjk2IDM5LjM1OTIzODMsMTIuOTU0MDU5NyBDMzkuMzU5MjM4MywxMy43MjMzNDQ3IDM4LjcwMTAyNjUsMTQuMzQ2ODUwOCAzNy44ODg5MjE1LDE0LjM0Njg1MDggQzM3LjA3NjgxNjUsMTQuMzQ2ODUwOCAzNi40MTg2MDQ3LDEzLjcyMzM0NDcgMzYuNDE4NjA0NywxMi45NTQwNTk3IEMzNi40MTg2MDQ3LDEwLjY1ODQzMDUgMzguMzkwMjk5NSw4Ljc5MDY5NzY3IDQwLjgxMzg3MTgsOC43OTA2OTc2NyBDNDMuMjM3NjA3NCw4Ljc5MDU0MjkyIDQ1LjIwOTMwMjMsMTAuNjUzMDE0MSA0NS4yMDkzMDIzLDEyLjk0ODc5ODEgWiIgaWQ9IlBhdGgiIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" />
+            </div>
+            <div>
+                <h2>Still have question about our Intracity Service?</h2>
+                <input type="submit" value="READ OUR FAQs >" id="readbtn">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="overlayp"></div>
+
+    <div id="footer">
+        <div class="inside">
+
+            <h1 id="portertag">PORTER</h1>
+            <h3>Send anything,</h3>
+            <h3>anywhere,</h3>
+            <h3>anytime</h3> </br></br></br>
+
+
+            <h3>We are here</h4>
+                <h4>Mumbai</h4>
+                <h4>Ahmedabad</h4>
+                <h4>Lucknow</h4>
+        </div>
+        <div class="inside">
+            <h3>Company</h3>
+            <h4>About us</h4>
+            <h4>Offers</h4>
+            <h4>Careers</h4>
+            <h4>Blogs</h4></br></br></br></br></br></br>
+
+
+
+            <h4>Delhi NCR</h4>
+            <h4>Jaipur</h4>
+            <h4>Coimbatore</h4>
+
+
+
+        </div>
+
+
+        <div class="inside">
+            <h3>Services</h3>
+            <h4>City Tempo</h4>
+            <h4>For Enterprise</h4>
+            <h4>Packers & Movers</h4> </br></br></br></br></br></br></br>
+
+
+
+            <h4>Bangalore</h4>
+            <h4>Pune</h4>
+            <h4>Indore</h4>
+
+
+
+        </div>
+
+        <div class="inside">
+            <h3>Support</h3>
+            <h4>Private Policy</h4>
+            <h4>Terms of Service</h4>
+            <h4>Insurance FAQSS</h4></br></br></br></br></br></br></br>
+
+
+            <h4>Hyderabad</h4>
+            <h4>Kolkata</h4>
+
+
+
+
+        </div>
+
+
+        <div class="inside">
+            <img class="logoA"
+                src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/play-store.3556fc81.png" />
+
+            <img class="logoA"
+                src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/app-store.e30d53a6.png" />
+
+            </br></br></br></br></br></br> </br></br>
+
+            <h4>Chennai</h4>
+            <h4>Surat</h4>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div id="next">
+        <div class="new">
+            <img class="old"
+                src="https://image.shutterstock.com/image-vector/photo-camera-icon-clear-600w-1053207272.jpg" />
+            <img class="old"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMn-LrY8dTdY_lhh39ZRk0IHd7buYoDaORxQ&usqp=CAU" />
+            <img class="old"
+                src="data:image/png;base64,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" />
+            <img class="old"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQotW5-33KlYmuvjR6frMLnb7huGAW-z83kIA&usqp=CAU" />
+            <img class="old"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGNY0pC7zNHt8ekplZwkB9iNNKS31fMuApzg&usqp=CAU" />
+
+
+        </div>
+
+
+        <div class="p">
+
+            <p>2021 SmartShift Logistics Solutions Pvt. Ltd.
+                CIN: U74999MH2014PTC306120</p>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
+
+<script src="home.js"></script>
+<script type=module>
+    import navbar from "../navbar/navbar3.js";
+    
+
+     let navbar_div = document.getElementById("navbarr")
+    
+
+      navbar_div.innerHTML = navbar();
+     
+      import navbar1 from "../navbar/navbar4.js";
+
+    
+      let navbar_div1 = document.getElementById("navbarr1")
+
+ 
+      navbar_div1.innerHTML = navbar1();
+      var abc = document.getElementById("a1");
+       abc.style.color = "blue"
+       abc.style.borderBottom ="3px solid blue"
+
+      const openModalButtons = document.querySelectorAll("[data-modal-target]");
+    const closeModalButtons = document.querySelectorAll("[data-close-button]");
+    const overlay = document.getElementById("overlayp");
+
+    openModalButtons.forEach(button =>{
+        button.addEventListener("click",()=>{
+            const modal = document.querySelector(button.dataset.modalTarget)
+            openModal(modal)
+        })
+    })
+    overlay.addEventListener("click",()=>{
+        const modals = document.querySelectorAll(".modalp.active")
+        modals.forEach(modal =>{
+            closeModal(modal)
+        })
+    })
+    closeModalButtons.forEach(button =>{
+        button.addEventListener("click",() =>{
+            const modal = button.closest(".modalp")
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal){
+        if(modal == null){
+            return;
+        }
+        modal.classList.add("active");
+        overlay.classList.add("active");
+    }
+    function closeModal(modal){
+        if(modal == null){
+            return;
+        }
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+</script>
+<script>
+    var prevScrollpos = window.pageYOffset;
+    console.log(prevScrollpos, "fkodo")
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbarr1").style.top = "0";
+            document.getElementById("navbarr1").style.opacity = "5";
+
+        } else if (prevScrollpos < currentScrollPos) {
+            document.getElementById("navbarr1").style.transition.opacity = "5s";
+
+            document.getElementById("navbarr1").style.opacity = "0";
+        } else {
+            document.getElementById("navbarr1").style.top = "-50px";
+            // document.getElementById("navbar1").style.opacity ="1";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>

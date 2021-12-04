@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fare Estimate</title>
+    <link rel="stylesheet" href="fare_estimate.css">
+   <link rel="stylesheet" href="../navbar/navbar.css">
+    <link rel="icon" href="https://d35ppnqksufxmo.cloudfront.net/frontend_website/favicon.ico">
+   <style>
+       #footer {
+
+       display: flex;
+       background-color: black;
+       }
+
+       #footer>h1,
+       h2,
+       h3,
+       h4 {
+
+       color: cornsilk;
+
+       }
+
+       #portertag {
+       color: cornsilk;
+       }
+
+       #footer>h3,
+       h4 {
+       font-family: sans-serif;
+       font-weight: lighter;
+       font-size: small;
+       }
+
+       .inside {
+       margin-top: 25px;
+       margin-right: 110px;
+       margin-left: 40px;
+       display: inline;
+       width: 400px;
+
+       }
+
+       .logoA {
+
+       width: 180px;
+       height: 50px;
+       margin: 8px;
+       border-radius: 10px;
+       border: 1px solid white;
+       }
+
+
+
+
+
+       #next {
+
+       display: flex;
+       background-color: black;
+       }
+
+       .new {
+
+       margin-top: 20px;
+       margin-left: 10px;
+       }
+
+       .old {
+
+       width: 30px;
+       height: 30px;
+       border-radius: 15px;
+       margin: 10px;
+       }
+
+       .p {
+
+       margin-left: 700px;
+       color: cornsilk;
+       margin-top: 20px;
+       }
+
+       #height {
+
+       height: 50px;
+       background-color: black;
+       }
+
+       #slide {
+       width: 100%;
+       height: 500px;
+       border: 1px solid red;
+
+       }
+
+       #mobile {
+
+       display: flex;
+       border: 1px solid red;
+       }
+
+       #internal {
+       margin-left: 80px;
+       width: 60%;
+       border: 1px solid red;
+
+       }
+
+       #internal>h1,
+       h3 {
+
+       color: black;
+       }
+
+       #blue {
+       background-color: aqua;
+       transform: rotate(-20deg);
+       width: 100%;
+       height: 300px;
+       border: 1px solid red;
+
+
+       }
+
+       .logoA {
+
+       background-color: blue;
+
+
+       }
+
+       #faqhead {
+       color: black;
+       }
+   </style>
+   
+</head>
+
+<body class="website-home">
+        <div class="navbarfinal">
+            <div id="navbarr"></div>
+
+            <div id="navbarr1"></div>
+        </div>
+<div class="modalp" id="modalp">
+    <div class="modal-header">
+        <div class="title">Track order</div>
+        <button data-close-button class="close-button">&#x2715;</button>
+    </div>
+    <div id="hr"></div>
+    <div class="modal-body">
+        <input type="text" placeholder="CRN or Docket number" class="crn" />
+        <input type="text" placeholder="Mobile number" class="crn" />
+        <button id="track" class="crn tr">TRACK ORDER</button>
+
+    </div>
+    <div id="text">
+        Enter your Booking Number for Spot order (e.g. CRN12345678)
+        and Docket Number for Intercity Parcel order (e.g. 1234567)
+        along with the Mobile number used while booking.
+    </div>
+</div>
+<div id="overlayp"></div>
+
+    <div id="addresses">
+        <div class="add">
+            <div>
+                Pick up Location</div>
+            <div class="para" id="pickUp_address"></div>
+        </div>
+        <div class="add">
+            <div>Drop Location</div>
+            <div class="para" id="drop_address"></div>
+        </div>
+    </div>
+
+    <div id="vehicle_wrapper">
+
+        <div id="vehicles_container">
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="one">
+
+                    </div>
+                    <div class="vehicle_name">
+                        TATA ACE
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="two">
+
+                    </div>
+                    <div class="vehicle_name">
+                        TATA407
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="three">
+
+                    </div>
+                    <div class="vehicle_name">
+                        3 WHEELER
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="four">
+
+                    </div>
+                    <div class="vehicle_name">
+                        ACE (HELPER)
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="five">
+
+                    </div>
+                    <div class="vehicle_name">
+                        3 WHEELER (HELPER)
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="six">
+
+                    </div>
+                    <div class="vehicle_name">
+                        8FT 1TON
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="seven">
+
+                    </div>
+                    <div class="vehicle_name">
+                        8FT PICKUP
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle_box">
+                <div class="img_wrapper">
+                    <div class="vehicle_img" id="eight">
+
+                    </div>
+                    <div class="vehicle_name">
+                        2 WHEELER
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="left_btn_container" class="btn_container">
+
+            <button id="left_btn" onclick="khisakLeft()">
+             </button>
+
+        </div>
+        <div id="right_btn_container" class="btn_container">
+
+            <button id="right_btn" onclick="khisakRight()">
+                > </button>
+
+        </div>
+
+
+    </div>
+   <div id="footer">
+       <div class="inside">
+
+           <h1 id="portertag">PORTER</h1>
+           <h3>Send anything,</h3>
+           <h3>anywhere,</h3>
+           <h3>anytime</h3> </br></br></br>
+
+
+           <h3>We are here</h4>
+               <h4>Mumbai</h4>
+               <h4>Ahmedabad</h4>
+               <h4>Lucknow</h4>
+       </div>
+       <div class="inside">
+           <h3>Company</h3>
+           <h4>About us</h4>
+           <h4>Offers</h4>
+           <h4>Careers</h4>
+           <h4>Blogs</h4></br></br></br></br></br></br>
+
+
+
+           <h4>Delhi NCR</h4>
+           <h4>Jaipur</h4>
+           <h4>Coimbatore</h4>
+
+
+
+       </div>
+
+
+       <div class="inside">
+           <h3>Services</h3>
+           <h4>City Tempo</h4>
+           <h4>For Enterprise</h4>
+           <h4>Packers & Movers</h4> </br></br></br></br></br></br></br>
+
+
+
+           <h4>Bangalore</h4>
+           <h4>Pune</h4>
+           <h4>Indore</h4>
+
+
+
+       </div>
+
+       <div class="inside">
+           <h3>Support</h3>
+           <h4>Private Policy</h4>
+           <h4>Terms of Service</h4>
+           <h4>Insurance FAQSS</h4></br></br></br></br></br></br></br>
+
+
+           <h4>Hyderabad</h4>
+           <h4>Kolkata</h4>
+
+
+
+
+       </div>
+
+
+       <div class="inside">
+           <img class="logoA"
+               src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/play-store.3556fc81.png" />
+
+           <img class="logoA"
+               src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/app-store.e30d53a6.png" />
+
+           </br></br></br></br></br></br> </br></br>
+
+           <h4>Chennai</h4>
+           <h4>Surat</h4>
+
+       </div>
+
+
+
+
+
+   </div>
+
+   <div id="next">
+       <div class="new">
+           <img class="old"
+               src="https://image.shutterstock.com/image-vector/photo-camera-icon-clear-600w-1053207272.jpg" />
+           <img class="old"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMn-LrY8dTdY_lhh39ZRk0IHd7buYoDaORxQ&usqp=CAU" />
+           <img class="old"
+               src="data:image/png;base64,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" />
+           <img class="old"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQotW5-33KlYmuvjR6frMLnb7huGAW-z83kIA&usqp=CAU" />
+           <img class="old"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGNY0pC7zNHt8ekplZwkB9iNNKS31fMuApzg&usqp=CAU" />
+
+
+       </div>
+
+
+       <div class="p">
+
+           <p>2021 SmartShift Logistics Solutions Pvt. Ltd.
+               CIN: U74999MH2014PTC306120</p>
+       </div>
+
+
+   </div>
+
+    
+
+
+
+</body>
+
+</html>
+
+<script src="fare_estimate.js">
+
+</script>
+<script type=module>
+    import navbar from "../navbar/navbar3.js";
+    
+
+     let navbar_div = document.getElementById("navbarr")
+    
+
+      navbar_div.innerHTML = navbar();
+     
+      import navbar1 from "../navbar/navbar4.js";
+
+    
+      let navbar_div1 = document.getElementById("navbarr1")
+
+ 
+      navbar_div1.innerHTML = navbar1();
+      var abc = document.getElementById("a1");
+       abc.style.color = "blue"
+       abc.style.borderBottom ="3px solid blue"
+
+      const openModalButtons = document.querySelectorAll("[data-modal-target]");
+    const closeModalButtons = document.querySelectorAll("[data-close-button]");
+    const overlay = document.getElementById("overlayp");
+
+    openModalButtons.forEach(button =>{
+        button.addEventListener("click",()=>{
+            const modal = document.querySelector(button.dataset.modalTarget)
+            openModal(modal)
+        })
+    })
+    overlay.addEventListener("click",()=>{
+        const modals = document.querySelectorAll(".modalp.active")
+        modals.forEach(modal =>{
+            closeModal(modal)
+        })
+    })
+    closeModalButtons.forEach(button =>{
+        button.addEventListener("click",() =>{
+            const modal = button.closest(".modalp")
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal){
+        if(modal == null){
+            return;
+        }
+        modal.classList.add("active");
+        overlay.classList.add("active");
+    }
+    function closeModal(modal){
+        if(modal == null){
+            return;
+        }
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+</script>
+<script>
+    var prevScrollpos = window.pageYOffset;
+    console.log(prevScrollpos, "fkodo")
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbarr1").style.top = "0";
+            document.getElementById("navbarr1").style.opacity = "5";
+
+        } else if (prevScrollpos < currentScrollPos) {
+            document.getElementById("navbarr1").style.transition.opacity = "5s";
+
+            document.getElementById("navbarr1").style.opacity = "0";
+        } else {
+            document.getElementById("navbarr1").style.top = "-50px";
+            // document.getElementById("navbar1").style.opacity ="1";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
